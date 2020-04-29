@@ -1,3 +1,32 @@
-<h1>Svelte</h1>
+<script>
+  import wordlist from "./wordlist.js"
 
-<p>Welcome to coding with Svelte!</p>
+  let word = ""
+  let result = ""
+
+  function findWord() {
+    console.log(`Searching for '${word}'...`)
+    // search the word list for the word.
+
+    //reset
+    result = "Not Found"
+
+    for (let i = 0; i < wordlist.length; i++){
+      if(wordlist[i] === word){
+      result = "Found it!"
+      }
+    }
+  }
+</script>
+
+<h1>Password Finder</h1>
+
+<label>
+	Find:
+	<input type="text" bind:value={word}>
+</label>
+
+<button on:click={findWord}>Find</button>
+
+<h2 class="subtitle">Result</h2>
+<p class="content">{result}</p>
