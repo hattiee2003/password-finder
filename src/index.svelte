@@ -9,11 +9,11 @@
     // search the word list for the word.
 
     //reset
-    result = "Not Found"
+    result = `Not Found after ${wordlist.length} searches.`
 
     for (let i = 0; i < wordlist.length; i++){
       if(wordlist[i] === word){
-      result = "Found it!"
+      result = `Found it after ${i} searches.`
       }
     }
   }
